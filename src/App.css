@@ -39,6 +39,10 @@ fieldset {
   margin: auto;
 }
 
+pre {
+  text-align: left;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
