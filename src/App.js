@@ -15,9 +15,9 @@ function App() {
       ipspace = `${ipspace}/32`
     }
     for (let v of servicetags.values){
-      console.log(v)
+      //console.log(v)
       for (let p of v.properties.addressPrefixes){
-        console.log(p)
+        //console.log(p)
         if (p.indexOf(':') === -1 && cidrUtils.isInRange(ipspace, p)){
           return `IP Space ${ipspace} is in: \n${JSON.stringify(v, null, 2)}`
         }
@@ -39,7 +39,7 @@ function App() {
   }
 
   const handleIpSpaceChange = (e) => {
-    console.log(e.target.value)
+    //console.log(e.target.value)
     setIpspace(e.target.value);
   }
 

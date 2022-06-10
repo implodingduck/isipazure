@@ -28,6 +28,17 @@
   color: #61dafb;
 }
 
+legend {
+  font-weight: bold;
+  font-size: 1.2em;
+  text-align: left;
+}
+
+fieldset {
+  max-width: 50em;
+  margin: auto;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
