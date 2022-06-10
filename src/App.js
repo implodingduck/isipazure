@@ -23,7 +23,7 @@ function App() {
         }
       }
     }
-    return `IP Space ${ipspace} not in Azure`
+    return `IP Space ${ipspace} not in Azure Service Tags list`
   }
 
   const checkIp = ()=>{
