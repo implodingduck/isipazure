@@ -11,6 +11,7 @@ function App() {
 
   const performIpLookup = (ip) => {
     let ipspace = ip
+    const retval = []
     if (ipspace.indexOf('/') === -1){
       ipspace = `${ipspace}/32`
     }
@@ -19,11 +20,15 @@ function App() {
       for (let p of v.properties.addressPrefixes){
         //console.log(p)
         if (p.indexOf(':') === -1 && cidrUtils.isInRange(ipspace, p)){
-          return `IP Space ${ipspace} is in: \n${JSON.stringify(v, null, 2)}`
+          retval.push(v)
         }
       }
     }
-    return `IP Space ${ipspace} not in Azure Service Tags list`
+    if (retval.length === 0){
+      return `IP Space ${ipspace} not in Azure Service Tags list`
+    }
+    return `IP Space ${ipspace} is in: \n${JSON.stringify(retval, null, 2)}`
+    
   }
 
   const checkIp = ()=>{
