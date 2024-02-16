@@ -37,6 +37,7 @@ legend {
 fieldset {
   max-width: 50em;
   margin: auto;
+  text-align: left;
 }
 
 pre {
