@@ -5,11 +5,11 @@ const axios = require('axios');
 const fs = require('fs');
 
 axios
-  .get('https://www.microsoft.com/en-us/download/confirmation.aspx?id=56519')
+  .get('https://www.microsoft.com/en-us/download/details.aspx?id=56519')
   .then(res => {
     console.log(`statusCode: ${res.status}`);
     const dom = new jsdom.JSDOM(res.data)
-    const failoverlink = dom.window.document.querySelector(".failoverLink").href
+    const failoverlink = dom.window.document.querySelector(".dlcdetail__download-btn").href
     console.log(`Downloading: ${failoverlink}`)
     axios.get(failoverlink)
     .then(res => {
